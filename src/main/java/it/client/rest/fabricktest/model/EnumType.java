@@ -1,5 +1,10 @@
 package it.client.rest.fabricktest.model;
 
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 public class EnumType {
 	private String enumeration;
 	private String value;

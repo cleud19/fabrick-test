@@ -1,5 +1,11 @@
 package it.client.rest.fabricktest.model;
 
+
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 public enum Status {
 	/**	The money transfer has been executed. */
 	EXECUTED,

@@ -1,5 +1,10 @@
 package it.client.rest.fabricktest.model;
 
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 public class MoneyTransferResponse {
 	private String moneyTransferId;
 	private Status status;

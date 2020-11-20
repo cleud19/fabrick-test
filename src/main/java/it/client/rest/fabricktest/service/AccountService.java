@@ -5,6 +5,11 @@ import it.client.rest.fabricktest.model.MoneyTransferRequest;
 import it.client.rest.fabricktest.model.MoneyTransferResponse;
 import it.client.rest.fabricktest.model.ResponseObject;
 
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 public interface AccountService {
 	
 	ResponseObject<Balance> getBalanceById(String id);

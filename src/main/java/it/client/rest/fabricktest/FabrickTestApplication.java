@@ -7,6 +7,11 @@ import org.springframework.web.client.RestTemplate;
 
 import it.client.rest.fabricktest.service.AccountServiceImpl;
 
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 @SpringBootApplication
 public class FabrickTestApplication {
 
@@ -16,3 +21,4 @@ public class FabrickTestApplication {
 	}
 
 }
+ 

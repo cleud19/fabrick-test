@@ -29,6 +29,11 @@ import it.client.rest.fabricktest.model.ResponseObject;
 import it.client.rest.fabricktest.model.Transaction;
 import it.client.rest.fabricktest.model.TransactionList;
 
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 @Service
 public class AccountServiceImpl implements AccountService{
 	
@@ -37,6 +42,7 @@ public class AccountServiceImpl implements AccountService{
 	@Autowired
 	private RestTemplate restTemplate;
 	 
+	
 	public ResponseObject<Balance> getBalanceById(String accountId) {
 		
 		String serviceUrl =BASE_URL + format("/api/gbs/banking/v4.0/accounts/%s/balance", accountId);
@@ -60,6 +66,7 @@ public class AccountServiceImpl implements AccountService{
         return response.getBody();
 	}
 	
+	 
 	public ResponseObject<MoneyTransferResponse> createMoneyTransfer(MoneyTransferRequest moneyTransferRequest, String accountId){
 		
 		String serviceUrl = BASE_URL + format("/api/gbs/banking/v4.0/accounts/%s/payments/money-transfers", accountId);
@@ -72,13 +79,6 @@ public class AccountServiceImpl implements AccountService{
         
         ParameterizedTypeReference<ResponseObject<MoneyTransferResponse>> responseType = new ParameterizedTypeReference<ResponseObject<MoneyTransferResponse>>() {};
         HttpEntity<MoneyTransferRequest> entity = new HttpEntity<>(moneyTransferRequest, requestHeaders);
-        
-        
-        ClientHttpRequestFactory factory = new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory());
-        
-        RestTemplate restTemplate = new RestTemplate(factory);
-         
-        restTemplate.setInterceptors(Collections.singletonList(new RequestResponseLoggingInterceptor()));
         
         ResponseEntity<ResponseObject<MoneyTransferResponse>> response = restTemplate.exchange(serviceUrl,HttpMethod.POST, entity,responseType);
         
@@ -104,16 +104,10 @@ public class AccountServiceImpl implements AccountService{
         requestHeaders.set("Auth-Schema","S2S");
         requestHeaders.set("apikey","FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP");
         
-        ParameterizedTypeReference< ResponseObject<TransactionList>> responseType = new ParameterizedTypeReference<ResponseObject<TransactionList>>() {};
-        	     
+        ParameterizedTypeReference< ResponseObject<TransactionList>> responseType = new ParameterizedTypeReference<ResponseObject<TransactionList>>() {};        	     
         HttpEntity<ResponseObject<TransactionList>> entity = new HttpEntity<>(requestHeaders);
         
-        ClientHttpRequestFactory factory = new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory());
-        
-        RestTemplate restTemplate = new RestTemplate(factory);
-         
-        restTemplate.setInterceptors(Collections.singletonList(new RequestResponseLoggingInterceptor()));
-        
+  
         ResponseEntity<ResponseObject<TransactionList>>  response = restTemplate.exchange(builder.toUriString(),HttpMethod.GET, entity,responseType);
          
         HttpStatus status = response.getStatusCode();

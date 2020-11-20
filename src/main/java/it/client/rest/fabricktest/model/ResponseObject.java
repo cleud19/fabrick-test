@@ -4,6 +4,11 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 public class ResponseObject<T> {
 	
 	private String status; 

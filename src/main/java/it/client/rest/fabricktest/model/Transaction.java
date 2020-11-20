@@ -4,6 +4,12 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 public class Transaction {
 	
 	private String transactionId;

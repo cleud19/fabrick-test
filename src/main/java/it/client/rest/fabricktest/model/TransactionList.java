@@ -2,6 +2,12 @@ package it.client.rest.fabricktest.model;
 
 import java.util.List;
 
+
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 public class TransactionList {
 	private List<Transaction> list;
 

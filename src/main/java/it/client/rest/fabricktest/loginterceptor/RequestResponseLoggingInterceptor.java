@@ -10,7 +10,14 @@ import org.springframework.util.StreamUtils;
  
 import java.io.IOException;
 import java.nio.charset.Charset;
- 
+/**
+ * Intercept Request and Response to log the body and the Headers.
+ * Set RequestResponseLoggingInterceptor log level to DEBUG to use this Interceptor.
+ * See ConfigurationClass.getRestTemplate().
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 public class RequestResponseLoggingInterceptor implements ClientHttpRequestInterceptor {
  
     private final Logger log = LoggerFactory.getLogger(this.getClass());

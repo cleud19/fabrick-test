@@ -4,6 +4,11 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+/**
+ * 
+ * @author Claudiu Iancu
+ *  
+ */
 public class MoneyTransferRequest {
 	
 	private Creditor creditor;
