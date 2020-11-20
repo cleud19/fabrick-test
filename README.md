@@ -12,4 +12,6 @@ Applicazione di test che consente di eseguire tre operazioni:
 
 Per testare il funzionamento del applicativo:
  - Importare il progetto in qualsiasi IDE e eseguire i test. 
+ - Settare il livello di log a DEBUG di it.client.rest.fabricktest.loginterceptor in application.properties per abilitare 
+   il log dei  Body e Headers delle Request e Response. 
  
