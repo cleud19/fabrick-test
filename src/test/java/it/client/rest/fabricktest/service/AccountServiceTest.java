@@ -32,7 +32,7 @@ import it.client.rest.fabricktest.model.TransactionList;
 
 
 @SpringBootTest
-@ContextConfiguration(classes = { ConfigurationClass.class })
+//@ContextConfiguration(classes = { ConfigurationClass.class })
 public class AccountServiceTest {
 
 	@Autowired
