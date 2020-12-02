@@ -18,8 +18,8 @@ Per testare il funzionamento del applicativo:
 	- GET: http://localhost:8080/accounts/14537780/payments/money-transfers
 	- GET: http://localhost:8080/accounts/14537780/balance
  
- POST: http://localhost:8080/accounts/14537780/payments/money-transfers
- Passare come body l'oggetto d'esempio da documentazione API: https://docs.fabrick.com/platform/apis/gbs-banking-payments-moneyTransfers-v4.0
+ 	- POST: http://localhost:8080/accounts/14537780/payments/money-transfers
+ 	  Passare come body l'oggetto d'esempio da documentazione API: https://docs.fabrick.com/platform/apis/gbs-banking-payments-moneyTransfers-v4.0
  
 NB Settare il livello di log a DEBUG di it.client.rest.fabricktest.loginterceptor in application.properties per abilitare 
    il log dei  Body e Headers delle Request e Response. 
