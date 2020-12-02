@@ -3,16 +3,15 @@ package it.client.rest.fabricktest.service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.event.annotation.AfterTestClass;
-import org.springframework.test.context.event.annotation.BeforeTestClass;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.web.client.HttpClientErrorException;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -21,7 +20,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import it.client.rest.fabricktest.configuration.ConfigurationClass;
+import it.client.rest.fabricktest.configuration.ConfigurationTestClass;
 import it.client.rest.fabricktest.model.Account;
 import it.client.rest.fabricktest.model.Balance;
 import it.client.rest.fabricktest.model.Creditor;
@@ -37,6 +36,8 @@ import it.client.rest.fabricktest.model.TransactionList;
  *  
  */
 @SpringBootTest
+@TestPropertySource("classpath:application.properties")
+@ContextConfiguration(classes=ConfigurationTestClass.class, loader=AnnotationConfigContextLoader.class)
 public class AccountServiceTest {
 
 	@Autowired
